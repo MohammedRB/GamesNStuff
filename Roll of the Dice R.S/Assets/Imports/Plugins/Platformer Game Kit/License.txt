@@ -1,0 +1,24 @@
+////////////////////////////////////////////////////////////
+// Licenses //
+////////////////////////////////////////////////////////////
+
+The Platformer Game Kit is governed by the Unity Asset Store EULA (https://unity3d.com/legal/as_terms); except for the character sprites which use a separate license outlined below.
+
+A viewer friendly version of this document is included in the documentation: https://kybernetik.com.au/platformer/docs/package/license
+
+
+
+////////////////////////////////////////////////////////////
+// Characters.png //
+////////////////////////////////////////////////////////////
+
+Animated Character Pack by szadiart:
+https://szadiart.itch.io/animated-character-pack
+
+License: "You can use this asset personally and commercially."
+
+These sprites have been renamed and compiled into a Sprite Atlas for use in the Platformer Game Kit.
+
+The Characters.png file also contains the sprites used for the environment (Bricks, Cracked, Ice, and Door) which are not part of the Animated Character Pack. They were created for the Platformer Game Kit, but for the sake of simplicity they are governed by the same license as the rest of the file.
+
+////////////////////////////////////////////////////////////

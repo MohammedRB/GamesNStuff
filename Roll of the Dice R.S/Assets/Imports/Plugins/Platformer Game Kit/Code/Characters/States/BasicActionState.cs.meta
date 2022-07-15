@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9dfccc15d40d250469a9ebd15a4a0fe0
+labels:
+- Example
+- FSM
+- FiniteStateMachine
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

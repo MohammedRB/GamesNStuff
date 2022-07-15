@@ -1,0 +1,15 @@
+{
+    "name": "PlatformerGameKit",
+    "references": [
+        "Animancer",
+        "Animancer.FSM"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
