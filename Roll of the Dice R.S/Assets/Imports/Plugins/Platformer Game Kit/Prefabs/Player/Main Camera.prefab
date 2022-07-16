@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7297178438693495040}
   - component: {fileID: 7297178438693495041}
   - component: {fileID: 7297178438693495045}
-  - component: {fileID: 7297178438693495044}
+  - component: {fileID: 8242108037293361036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7297178438693495054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 7.37, y: 11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   _VelocityFactor: 1
   _LinearAcceleration: 7
   _DynamicAcceleration: 10
---- !u!114 &7297178438693495044
+--- !u!114 &8242108037293361036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0332b46861ad2f4d8862853b040c842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PositionStrength: {x: 0.5, y: 0.5, z: 0}
-  _RotationStrength: {x: 0, y: 0, z: 5}
+  _PositionStrength: {x: 0, y: 0, z: 0}
+  _RotationStrength: {x: 0, y: 0, z: 0}
   _Frequency: 6
   _MagnitudeExponent: 1
   _Damping: 1.5
