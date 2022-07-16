@@ -26,5 +26,6 @@ public class LevelLoader : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision){
         LoadNextLevel();
+        Debug.Log("Got Dice");
     }
 }
