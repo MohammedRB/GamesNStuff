@@ -9,4 +9,3 @@ Making a game for the GMTK 2022 Game Jam. Hopefully we do well!
 - Has a chance of instant death.
 - Mana bar fills up.
 - Mana allows for them to put the odds in their favour.
-- 
