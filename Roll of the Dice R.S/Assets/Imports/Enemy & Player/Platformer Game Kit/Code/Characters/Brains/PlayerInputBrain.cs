@@ -17,6 +17,10 @@ namespace PlatformerGameKit.Characters.Brains
     [HelpURL(APIDocumentation + nameof(PlayerInputBrain))]
     public sealed class PlayerInputBrain : CharacterBrain
     {
+        /*public AudioSource jump;
+        public AudioSource attack;
+        public AudioSource movement;*/
+        
         /************************************************************************************************************************/
 
         [Header("Input Names")]
@@ -62,6 +66,7 @@ namespace PlatformerGameKit.Characters.Brains
                 if (Input.GetButtonDown(_JumpButton) &&
                     Character.StateMachine.TrySetState(_Jump))
                     _CurrentJumpState = Character.StateMachine.CurrentState;
+                    //jump.Play();
 
                 // If currently in that state and jump is released, return to idle.
                 if (_CurrentJumpState == Character.StateMachine.CurrentState &&
@@ -71,9 +76,11 @@ namespace PlatformerGameKit.Characters.Brains
 
             if (_PrimaryAttack != null && Input.GetButtonDown(_PrimaryAttackButton))
                 Character.StateMachine.TryResetState(_PrimaryAttack);
+                //attack.Play();
 
             if (_SecondaryAttack != null && Input.GetButtonDown(_SecondaryAttackButton))
                 Character.StateMachine.TryResetState(_SecondaryAttack);
+                //attack.Play();
 
             Character.Run = Input.GetButton(_RunButton);
 

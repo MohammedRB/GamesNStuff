@@ -91,7 +91,7 @@ namespace PlatformerGameKit.Characters
 
         /************************************************************************************************************************/
 
-        private float _GravityScale;
+        public float _GravityScale;
 
         /// <inheritdoc/>
         public override Vector2 Gravity => Physics2D.gravity * _GravityScale;
