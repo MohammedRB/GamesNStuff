@@ -183,8 +183,12 @@ namespace PlatformerGameKit
 
         /************************************************************************************************************************/
 
-        public void IncreaseMaxHealth(int amount){
+        /*public void IncreaseMaxHealth(int amount){
             _MaximumHealth += amount;
+        }*/
+
+        public void InstaDeath(){
+            CurrentHealth = 0;
         }
     }
 }

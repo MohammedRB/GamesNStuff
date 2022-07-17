@@ -49,7 +49,7 @@ namespace PlatformerGameKit
 
         [SerializeField]
         [Tooltip("The amount of damage this hit deals")]
-        private int _Damage;
+        public int _Damage;
 
         /// <summary>[<see cref="SerializeField"/>]
         /// The amount of damage this hit deals.
