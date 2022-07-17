@@ -20,6 +20,12 @@ namespace PlatformerGameKit
         [SerializeField] private Health _Health;
         [SerializeField] private Text _Text;
 
+        public int numOfHearts;
+
+        public Image[] hearts;
+        public Sprite fullHeart;
+        public Sprite emptyHeart;
+
         /************************************************************************************************************************/
 
 #if UNITY_EDITOR
@@ -44,6 +50,25 @@ namespace PlatformerGameKit
         private void OnHealthChanged()
         {
             _Text.text = $"Health: {_Health.CurrentHealth} / {_Health.MaximumHealth}";
+            
+            /*if ((_Health.CurrentHealth/10) > numOfHearts){
+            _Health.CurrentHealth = numOfHearts * 10;
+            }*/
+
+            for (int i = 0; i<hearts.Length; i++){
+                if ((i*10) < _Health.CurrentHealth){
+                    hearts[i].sprite = fullHeart;
+                }
+                else {
+                    hearts[i].sprite = emptyHeart;
+                }
+
+                if ((i*10) > numOfHearts){
+                    hearts[i].enabled = true;
+                } else{
+                    hearts[i].enabled = false;
+                }
+            }   
         }
 
         /************************************************************************************************************************/
