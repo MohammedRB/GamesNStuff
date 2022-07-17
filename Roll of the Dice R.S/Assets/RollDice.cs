@@ -5,7 +5,7 @@ using UnityEngine;
 public class RollDice : MonoBehaviour
 {
     //public GroundCharacterMovement player;
-    GroundCharacterMovement slc = new GroundCharacterMovement();
+    //GroundCharacterMovement slc = new GroundCharacterMovement();
     
     // Start is called before the first frame update
     void Start()

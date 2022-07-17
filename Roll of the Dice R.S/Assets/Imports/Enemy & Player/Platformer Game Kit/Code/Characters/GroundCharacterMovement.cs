@@ -6,6 +6,7 @@ using Animancer.Units;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 //using System;
 
 namespace PlatformerGameKit.Characters
@@ -104,43 +105,106 @@ namespace PlatformerGameKit.Characters
         /************************************************************************************************************************/
 
         public Health _health;
-        public HitData _hitData;
 
-        int dmgStr = _hitData.Damage;
+        public HitData _hitData;
+        public int tempDmg;
+        public bool checkDmg = true;
+
+        public BoxCharacterBody2D gravity;
+        public float tempGrav;
+        public bool checkGrav = true;
+
+        public GameObject[] diceFaces;
+        public AudioSource diceRoll;
+
         public void Roll(){
-            float randNum = Random.Range(1f,100f);
+            diceRoll.Play();
+
+            float randNum = Random.Range(1f,117.75f);
             
-            if (randNum == 1 ){
-                _health.InstaDeath();
+            if (checkGrav == true){
+                tempGrav = gravity._GravityScale;
+                checkGrav = false;
             }
-            else if(randNum > 1 && randNum <= 12){
+
+            if (checkDmg == true){
+                tempDmg = _hitData.Damage;
+                checkDmg = false;
+            }
+            
+            if (randNum < 2 ){
+                RemoveEffects();
+                _health.InstaDeath();
+                MakeActive(0);
+            }
+            else if(randNum >= 2 && randNum <= 12){
+                RemoveEffects();
                 _WalkSpeed = 3;
                 _RunSpeed = 5;
+                MakeActive(1);
             }
             else if(randNum > 12 && randNum <= 22){
-                // jump down
+                RemoveEffects();
+                gravity._GravityScale = gravity._GravityScale + 1;
+                MakeActive(2);
             }
             else if(randNum > 22 && randNum <= 32){
+                RemoveEffects();
                 _health.SetMaximumHealth(50, Health.HealthChangeMode.Offset);
+                MakeActive(3);
             }
             else if(randNum > 32 && randNum <= 42){
-                _hitData.Damage = dmgStr - 3;
+                RemoveEffects();
+                _hitData.Damage = _hitData.Damage - 3;
+                MakeActive(4);
             }
             else if(randNum > 42 && randNum <= 55.75){
+                RemoveEffects();
                 _WalkSpeed = 9;
                 _RunSpeed = 13;
+                MakeActive(5);
             }
             else if(randNum > 55.75 && randNum <= 69.5){
+                RemoveEffects();
                 _health.SetMaximumHealth(150, Health.HealthChangeMode.Offset);
+                MakeActive(6);
             }
             else if(randNum > 69.5 && randNum <= 86.25){
-                // jump up
+                RemoveEffects();
+                gravity._GravityScale = gravity._GravityScale - 1;
+                MakeActive(7);
             }
             else if(randNum > 86.25 && randNum <= 100){
-                //strength up
+                RemoveEffects();
+                _hitData.Damage = _hitData.Damage + 3;
+                MakeActive(8);
+            }
+            else if(randNum > 100 && randNum <= 117.75){
+                RemoveEffects();
+
+                foreach (GameObject item in diceFaces)
+                {
+                    item.SetActive(false);
+                }
             }
         }
 
-        //IEnumerator Effect
+        public void MakeActive(int itemIdx){
+            for (int i = 0; i < diceFaces.Length; i++){
+                if (i == itemIdx){
+                    diceFaces[i].SetActive(true);
+                }
+                else{
+                    diceFaces[i].SetActive(false);
+                }
+            }
+        }
+
+        public void RemoveEffects(){
+            _WalkSpeed = 6;
+            _RunSpeed = 9;
+            gravity._GravityScale = tempGrav;
+            _hitData.Damage = tempDmg;
+        }
     }
 }
