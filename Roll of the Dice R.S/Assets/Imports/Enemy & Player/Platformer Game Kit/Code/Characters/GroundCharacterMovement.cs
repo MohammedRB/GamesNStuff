@@ -4,6 +4,9 @@
 
 using Animancer.Units;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+//using System;
 
 namespace PlatformerGameKit.Characters
 {
@@ -99,5 +102,45 @@ namespace PlatformerGameKit.Characters
         }
 
         /************************************************************************************************************************/
+
+        public Health _health;
+        public HitData _hitData;
+
+        int dmgStr = _hitData.Damage;
+        public void Roll(){
+            float randNum = Random.Range(1f,100f);
+            
+            if (randNum == 1 ){
+                _health.InstaDeath();
+            }
+            else if(randNum > 1 && randNum <= 12){
+                _WalkSpeed = 3;
+                _RunSpeed = 5;
+            }
+            else if(randNum > 12 && randNum <= 22){
+                // jump down
+            }
+            else if(randNum > 22 && randNum <= 32){
+                _health.SetMaximumHealth(50, Health.HealthChangeMode.Offset);
+            }
+            else if(randNum > 32 && randNum <= 42){
+                _hitData.Damage = dmgStr - 3;
+            }
+            else if(randNum > 42 && randNum <= 55.75){
+                _WalkSpeed = 9;
+                _RunSpeed = 13;
+            }
+            else if(randNum > 55.75 && randNum <= 69.5){
+                _health.SetMaximumHealth(150, Health.HealthChangeMode.Offset);
+            }
+            else if(randNum > 69.5 && randNum <= 86.25){
+                // jump up
+            }
+            else if(randNum > 86.25 && randNum <= 100){
+                //strength up
+            }
+        }
+
+        //IEnumerator Effect
     }
 }
