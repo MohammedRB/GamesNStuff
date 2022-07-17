@@ -182,5 +182,9 @@ namespace PlatformerGameKit
         public event Action<Hit> OnHitReceived;
 
         /************************************************************************************************************************/
+
+        public void IncreaseMaxHealth(int amount){
+            _MaximumHealth += amount;
+        }
     }
 }
